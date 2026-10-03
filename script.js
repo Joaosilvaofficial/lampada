@@ -46,7 +46,17 @@ function quebrarLampada() {
     lampada.style.cursor = 'default';
 }
 
-
 // Adiciona os eventos de clique aos elementos
 interruptor.addEventListener('click', alternarEstado);
 lampada.addEventListener('click', quebrarLampada);
+
+// ==========================================
+// NOVO: Adiciona o evento para a barra de Espaço
+// ==========================================
+document.addEventListener('keydown', function (event) {
+    // Verifica se a tecla pressionada foi o Espaço
+    if (event.code === 'Space' || event.key === ' ') {
+        event.preventDefault(); // Evita que a página role para baixo ao apertar espaço
+        alternarEstado(); // Chama a mesma função do clique do interruptor
+    }
+});
