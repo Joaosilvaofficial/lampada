@@ -1,0 +1,140 @@
+/* ==========================================================================
+   Configurações Globais & Reset
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #121214;
+    /* Fundo escuro moderno */
+    color: #e1e1e6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   Header (Cabeçalho)
+   ========================================================================== */
+header {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+header h1 {
+    font-size: 2rem;
+    color: #4ea8de;
+    /* Azul destacado */
+    margin-bottom: 0.5rem;
+}
+
+header h2 {
+    font-size: 1.1rem;
+    color: #8f8f9d;
+    font-weight: 400;
+}
+
+/* ==========================================================================
+   Main (Área Central da Lâmpada)
+   ========================================================================== */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    max-width: 400px;
+    padding: 1rem;
+}
+
+/* Containers das imagens */
+.lampada,
+.interruptor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s ease;
+}
+
+/* Efeito de leve zoom ao passar o mouse */
+.lampada:hover,
+.interruptor:hover {
+    transform: scale(1.05);
+}
+
+.lampada img {
+    height: 220px;
+    object-fit: contain;
+
+    /* Define o martelo como cursor e usa 'pointer' como plano de fundo caso o SVG falhe */
+    cursor: url('assets/martelo.png') 16 16, pointer;
+
+    filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.5));
+    transition: transform 0.1s ease;
+}
+
+/* Efeito de batida: inclina o martelo levemente quando o usuário clica */
+.lampada img {
+    height: 220px;
+    object-fit: contain;
+
+    /* Tentativa 1: SVG relativo | Tentativa 2: Fallback comum caso falhe */
+    cursor: url('assets/martelo.png') 16 16, pointer;
+
+    filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.5));
+    transition: transform 0.1s ease;
+}
+
+
+.interruptor img {
+    height: 80px;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+/* Texto de aviso */
+h3 {
+    color: #da3737;
+    /* Vermelho de alerta */
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: pulsar 2s infinite;
+}
+
+/* Animação que faz o aviso piscar suavemente */
+@keyframes pulsar {
+    0% {
+        opacity: 0.6;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.6;
+    }
+}
+
+/* ==========================================================================
+   Footer (Rodapé)
+   ========================================================================== */
+footer {
+    padding: 1.5rem;
+    text-align: center;
+    width: 100%;
+    border-top: 1px solid #202024;
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: #7c7c8a;
+}
